@@ -1,10 +1,11 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Button } from "@/components/ui/button";
-import { Plus, Search } from "lucide-react";
+import { Search } from "lucide-react";
 import { Input } from "../ui/input";
 import { ScrollArea } from "../ui/scroll-area";
 import { formatDateTime } from "@/lib/utils";
 import Link from "next/link";
+import AuthenticatedUser from "./AuthenticatedUser";
+import { messages } from "./ChatMessages";
 
 const filteredConversations = [
   {
@@ -53,7 +54,9 @@ const ChatAppSidebar = () => {
       {/* Header */}
       <div className="p-4 border-b border-border">
         <Link href="/" className="flex items-center justify-between mb-4">
-          <h1 className="text-2xl font-bold text-foreground">Pinglet Messages</h1>
+          <h1 className="text-2xl font-bold text-foreground">
+            Pinglet Messages
+          </h1>
           {/* <Button size="icon" variant="ghost" className="rounded-full">
             <Plus className="w-5 h-5" />
           </Button> */}
@@ -117,6 +120,7 @@ const ChatAppSidebar = () => {
           ))}
         </div>
       </ScrollArea>
+      <AuthenticatedUser selectedConversation={messages[0]} />
     </>
   );
 };
