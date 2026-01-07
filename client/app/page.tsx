@@ -1,9 +1,7 @@
-import React from 'react'
+import ChatAppContent from "@/components/chat/ChatAppContent";
 
 const page = () => {
-  return (
-    <div>page</div>
-  )
-}
+  return <ChatAppContent />;
+};
 
-export default page
+export default page;
